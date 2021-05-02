@@ -1,0 +1,8 @@
+.decoration{
+    text-decoration: none;
+}
+@media only screen and (max-width: 468px) {
+    .decoration{
+      display: block;
+    }
+  }

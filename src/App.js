@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import User from './commonComponents/User/user';
+import Users from './modules/Users/users';
+import Inbox from './modules/inbox/inbox';
+import Starred from './modules/starred/starred';
+import Spam from './modules/spam/spam';
+import {
+   HashRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+       <Switch>
+    <Route exact path='/'>
+      <Inbox />
+    </Route>
+    <Route exact path='/inbox'>
+      <Inbox />
+    </Route>
+    <Route exact path='/starred'>
+    <Starred />
+    </Route>
+    <Route exact path='/users'>
+    <Users />
+    </Route>
+    <Route exact path='/spam'>
+    <Spam />
+    </Route>
+    <Route path='/User/:index/:name/:rollNo/:Class/:section'><User/></Route>
+
+    </Switch>
+    </HashRouter>
   );
 }
 
